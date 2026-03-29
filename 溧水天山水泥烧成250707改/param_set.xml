@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="127.0.0.1" opcServerName="Freelance2000OPCServer.74.1"/>
+      <parameter blj_a1="0.999" blj_a2="0.9969" blj_delvd1_down="0.003" blj_delvd1_up="0.003" blj_delvd2_down="0.005" blj_delvd2_up="0.005" blj_delvd3_down="0.01" blj_delvd3_up="0.01" blj_delvd4_down="0.013" blj_delvd4_up="0.013" blj_lmd1="9500" blj_lmd2="9200" blj_max="3.3" blj_min="3.2" blj_vd="0.008" dtdlcntMax="1100" ufjl="0.1"/>
+      <parameter fjl_a="0.015" fjl_alpha1="0.967" fjl_alpha2="0.953" fjl_b="0.022" fjl_c="0.01" fjl_delvd1="0.005" fjl_delvd2="0.01" fjl_delvd3="0.03" fjl_delvd4="0.05" fjl_lambda1="580" fjl_lambda2="330" fjl_max="12.5" fjl_min="9" fjl_vd="0.05" fjl_xianfu="0.2"/>
+      <parameter dt_max="320" dt_min="200" dtdl_alpha="0.101" dtdl_beta="5" dtdl_delvd1="3" dtdl_delvd2="4" dtdl_delvd3="5" dtdl_gamma="0" dtdl_vd="2"/>
+      <parameter tm_alpha="0.035" tm_alpha1="0.5" tm_beta="3" tm_beta1="30" tm_gamma="0.01" tm_gamma1="0.02" tm_max="12.8" tm_min="9.5"/>
+      <parameter yt_alpha="0.0059" yt_alpha1="0.3" yt_beta="10" yt_beta1="10" yt_gamma="0.01" yt_gamma1="0.01" yt_max="50" yt_min="30"/>
+      <parameter DTlevel0="131" DTlevel1="123" DTlevel2="115" DTlevel3="110" WLlevel0="240" WLlevel1="225" WLlevel2="210" WLlevel3="200" fj11dl0="246" fj11dl1="246" fj11dl2="256" fj11dl3="256" fj11dl_defV0="262" fj11dl_defV1="260" fj11dl_defV2="258" fj11dl_defV3="256" zhuansu_MAX0="12" zhuansu_MAX1="12" zhuansu_MAX2="12" zhuansu_MAX3="12" zhuansu_MIN0="5.8" zhuansu_MIN1="5.1" zhuansu_MIN2="5" zhuansu_MIN3="4.9"/>
+      <parameter fjl_douti_P="0.038" fjl_weimeipress_P="0.18"/>
+      <parameter gwfj_alpha="0.0013" gwfj_alpha1="0.3" gwfj_beta="10" gwfj_beta1="10" gwfj_gamma="0.01" gwfj_gamma1="0.01" gwfj_max="870" gwfj_min="810"/>
+      <parameter decomposing_furnace_tempr_2_lowerlimitS="875" decomposing_furnace_tempr_2_upperlimitS="925" fazu1_max="8" fazu1_min="8" fazu2_max="8" fazu2_min="8" snd_chamber_pressure_lowerlimitS="10000" snd_chamber_pressure_upperlimitS="12500"/>
+      <parameter blj_cle_max="20" blj_cle_min="20" fjl_bcbl="0.12" fjl_cle_max="19" fjl_cle_min="18" fjltempbc="0"/>
+      <parameter blj_chazhi="0.4" blj_down_moren="0.2" blj_judge_time="800" blj_limit="0.1" blj_up_moren="0.2" delta_differenceValue="2" speed_differenceValue="0.1"/>
+      <parameter blj_alpha1="0.0012" blj_beta1="20" blj_gamma1="0" ecfw_sp="1200" kongchuang_mv="0.005" pressure_vd="11000" pressure_vd_low="10800" yachuang_mv="0.005" ysphfjdl="197" ysphfjdlDV="0" zhuansu_mid="3.25"/>
+      <parameter fjl_CO_P1="0.3" fjl_CO_P2="0.02" fjl_CO_P3="0.008" fjl_CO_jm="0.25" fjl_CO_level1="8800" fjl_CO_level2="5000" fjl_CO_level3="3500" fjl_CO_time="1" fjl_jm_YuDu="200" fjl_jm_time1="13" fjl_jm_time2="5" u_final="15" wmfy_xianfu="0.8"/>
+   </commdata>
+</paramdata>
