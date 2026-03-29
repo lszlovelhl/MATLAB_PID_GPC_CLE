@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter OPCIP="192.168.1.133" OPCServer="OPCServer.WinCC"/>
+      <parameter fj_max="100" fj_min="55" gd_gas1_max="85000" gd_gas2_max="85000" gd_gas3_max="85000" menlucount="10" mqgwyldef="10" zrkqyldef="6.5"/>
+      <parameter popmenuswitchorder1="1" popmenuswitchorder2="2" popmenuswitchorder3="3"/>
+      <parameter ewfloor="100" ewmid="130" ewtfloor="0.7" ewtmid="0.95" ewtop="165" ewttop="1.2" fuzzyfloor="20000" fuzzytop="78000" fwfloor="5000" fwmid="6500" fwtop="7500"/>
+      <parameter airgaspotialdownsetoff="0.01" airgaspotialupsetoff="0.01" cntcycle="3" famenzhenfu="2" liuliangzhenfu="3000" se_op_time="17"/>
+   </commdata>
+   <furnacetype name="1#">
+      <parameter f1="78500" f1_max="78000" f1_min="30000" kongranbi1_1="0.63" minkongranbi1_1="0.55"/>
+      <parameter fqwdmax="428" fqwdmid="360" gdwddef="1365" mqlllower="20000" slsjdef="90"/>
+      <parameter airPara1="30" airPara1_1="0.00048" airPara1_2="0.03" airPara1_3="0.02" gasPara1="30" gasPara1_1="0.0004" gasPara1_2="0.03" gasPara1_3="0.02"/>
+      <parameter air1_down="10" air1_up="80" gas1_down="15" gas1_up="80"/>
+   </furnacetype>
+   <furnacetype name="2#">
+      <parameter f2="78500" f2_max="78000" f2_min="30000" kongranbi2_1="0.6" minkongranbi2_1="0.55"/>
+      <parameter fqwdmax="428" fqwdmid="360" gdwddef="1375" mqlllower="20000" slsjdef="70"/>
+      <parameter airPara2="30" airPara2_1="0.00048" airPara2_2="0.03" airPara2_3="0.015" gasPara2="30" gasPara2_1="0.0005" gasPara2_2="0.03" gasPara2_3="0.02"/>
+      <parameter air2_down="10" air2_up="80" gas2_down="15" gas2_up="80"/>
+   </furnacetype>
+   <furnacetype name="3#">
+      <parameter f3="78500" f3_max="78000" f3_min="30000" kongranbi3_1="0.62" minkongranbi3_1="0.55"/>
+      <parameter fqwdmax="428" fqwdmid="360" gdwddef="1365" mqlllower="20000" slsjdef="15"/>
+      <parameter airPara3="30" airPara3_1="0.00045" airPara3_2="0.035" airPara3_3="0.03" gasPara3="35" gasPara3_1="0.0005" gasPara3_2="0.03" gasPara3_3="0.02"/>
+      <parameter air3_down="10" air3_up="85" gas3_down="15" gas3_up="80"/>
+   </furnacetype>
+</paramdata>

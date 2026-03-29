@@ -1,0 +1,120 @@
+[~,length]=size(data);
+plant=3;
+pos=19*(plant-1);
+for b=1:length-1
+ if b>32
+            gdtemp_sum1_1=sum(data(5,b-3:b+1)); %连续5s的拱顶温度
+            gdtemp_sum1_2=sum(data(5,b-8:b-4));
+            gdtemp_average1_1=gdtemp_sum1_1/5;
+            gdtemp_average1_2=gdtemp_sum1_2/5;
+
+            gdtemp_sum2_1=sum(data(24,b-3:b+1)); %连续5s的拱顶温度
+            gdtemp_sum2_2=sum(data(24,b-8:b-4));
+            gdtemp_average2_1=gdtemp_sum2_1/5;
+            gdtemp_average2_2=gdtemp_sum2_2/5;
+
+            gdtemp_sum3_1=sum(data(43,b-3:b+1)); %连续5s的拱顶温度
+            gdtemp_sum3_2=sum(data(43,b-8:b-4));
+            gdtemp_average3_1=gdtemp_sum3_1/5;
+            gdtemp_average3_2=gdtemp_sum3_2/5;
+
+            gdtemp1=[gdtemp_average1_1 gdtemp_average1_2];
+            gdtemp2=[gdtemp_average2_1 gdtemp_average2_2];
+            gdtemp3=[gdtemp_average3_1 gdtemp_average3_2];
+            gdtemp=[gdtemp1;gdtemp2;gdtemp3];
+            gdwendu(1)=(sum(data(5,b-13:b+1)))/15;
+            gdwendu(2)=(sum(data(24,b-13:b+1)))/15;
+            gdwendu(3)=(sum(data(43,b-13:b+1)))/15;
+    a_gdwendu=gdwendu;
+    deltagdwd(1,b)=gdtemp1(1)-gdtemp1(2);
+deltagdwd(2,b)=gdtemp2(1)-gdtemp2(2);
+deltagdwd(3,b)=gdtemp3(1)-gdtemp3(2);
+        end 
+if b>=16
+    airpv(1,1:16)=data(13,b-14:b+1);               % 一炉空气流量测量值==
+    airpv(2,1:16)=data(32,b-14:b+1);               % 二炉空气流量测量值==
+    airpv(3,1:16)=data(51,b-14:b+1);               % 三炉空气流量测量值==
+    gaspv(1,1:16)=data(12,b-14:b+1);               % 一炉煤气流量测量值==
+    gaspv(2,1:16)=data(31,b-14:b+1);               % 二炉煤气流量测量值==
+    gaspv(3,1:16)=data(50,b-14:b+1);               % 三炉煤气流量测量值==   
+    airmean=mean(airpv');
+    gasmean=mean(gaspv');
+    for i=1:16
+        if abs(gaspv(1,i)-gasmean(1))>=30
+            gaspv(1,i)=gasmean(1);
+        end
+        if abs(airpv(1,i)-airmean(1))>=30
+            airpv(1,i)=airmean(1);
+        end
+
+        if abs(gaspv(2,i)-gasmean(2))>= 30              
+            gaspv(2,i)=gasmean(2);
+        end
+        if abs(airpv(2,i)-airmean(2)) >= 30            
+            airpv(2,i)=airmean(2);
+        end
+
+        if abs(gaspv(3,i)-gasmean(3))>= 30           
+            gaspv(3,i)=gasmean(3);
+        end
+        if abs(airpv(3,i)-airmean(3)) >= 30            
+            airpv(3,i)=airmean(3);
+        end
+    end
+    gasmean=mean(gaspv');
+    airmean=mean(airpv');
+   elseif b>=10
+        airpv(1,1:10)=data(13,b-8:b+1);               % 一炉空气流量测量值==
+        airpv(2,1:10)=data(32,b-8:b+1);               % 二炉空气流量测量值==
+        airpv(3,1:10)=data(51,b-8:b+1);               % 三炉空气流量测量值==
+        gaspv(1,1:10)=data(12,b-8:b+1);               % 一炉煤气流量测量值==
+        gaspv(2,1:10)=data(31,b-8:b+1);               % 二炉煤气流量测量值==
+        gaspv(3,1:10)=data(50,b-8:b+1);               % 三炉煤气流量测量值==   
+        airmean=mean(airpv');
+        gasmean=mean(gaspv');
+        for i=1:10
+            if abs(gaspv(1,i)-gasmean(1))>=30
+                gaspv(1,i)=gasmean(1);
+            end
+            if abs(airpv(1,i)-airmean(1))>=30
+                airpv(1,i)=airmean(1);
+            end
+
+            if abs(gaspv(2,i)-gasmean(2))>= 30              
+                gaspv(2,i)=gasmean(2);
+            end
+            if abs(airpv(2,i)-airmean(2)) >= 30              
+                airpv(2,i)=airmean(2);
+            end
+
+            if abs(gaspv(3,i)-gasmean(3))>= 30            
+                gaspv(3,i)=gasmean(3);
+            end
+            if abs(airpv(3,i)-airmean(3)) >= 30            
+                airpv(3,i)=airmean(3);
+            end
+        end
+        gasmean=mean(gaspv');
+        airmean=mean(airpv');   
+    else
+        airmean(1)=data(13,b+1);
+        airmean(2)=data(32,b+1);
+        airmean(3)=data(51,b+1);
+        gasmean(1)=data(12,b+1);
+        gasmean(2)=data(31,b+1); 
+        gasmean(3)=data(50,b+1);
+end
+
+end
+for i=3:length
+
+et(i-2)=data(5+pos,i)-data(5+pos,i-1);
+
+end
+figure;
+subplot(2,1,1);
+plot(data(5+pos,2:length-3));
+subplot(2,1,2);
+plot(deltagdwd(plant,2:length-3),'r');
+hold on
+plot(et(2:length-3));
