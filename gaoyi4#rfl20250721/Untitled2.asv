@@ -1,0 +1,119 @@
+%% 画1#拱顶温度与空燃比
+[~,length]=size(data);
+begin1=700;
+%length=2500;
+figure;
+subplot(2,1,1);
+plot(data(5,begin1:length));
+hold on
+plot(data(78,begin1:length)-20,'r');
+for i=begin1:length
+    if    data(12,i)<1
+        data(12,i)=1000;
+    end
+portial1(i-(begin1-1))=data(13,i)/(data(12,i)+0.0001);
+end
+subplot(2,1,2);
+plot(portial1(1:length-begin1));
+hold on
+plot(a_his_airgaspotial(1,begin1:length),'r');
+
+%% 画1#煤气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(1,2:length));%设定
+subplot(2,1,2);
+plot(data(12,2:length));
+hold on
+plot(data(72,2:length),'r');
+
+%% 画1#空气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(3,2:length));%设定
+subplot(2,1,2);
+plot(data(13,2:length));
+hold on
+plot(data(75,2:length),'r');
+
+
+%% 2#
+%% 画2#拱顶温度与空燃比
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(24,2:length));
+hold on
+plot(data(79,2:length)-20,'r');
+for i=2:length
+    if    data(31,i)<1
+        data(31,i)=1000;
+    end
+portial2(i-1)=data(32,i)/(data(31,i)+0.0001);
+end
+subplot(2,1,2);
+plot(portial2);
+hold on
+plot(a_his_airgaspotial(2,2:length),'r');
+%% 画2#煤气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(20,2:length));%设定
+subplot(2,1,2);
+plot(data(31,2:length));
+hold on
+plot(data(73,2:length),'r');
+
+%% 画2#空气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(22,2:length));%设定
+subplot(2,1,2);
+plot(data(32,2:length));
+hold on
+plot(data(76,2:length),'r');
+%% 3#
+%% 画3#拱顶温度与空燃比
+[~,length]=size(data);
+length=2500;
+for i=2:length
+    if    data(50,i)<1
+        data(50,i)=1000;
+    end
+portial3(i-1)=data(51,i)/(data(50,i)+0.0001);
+set3(i-1)=1320;
+end
+figure;
+subplot(2,1,1);
+plot(data(43,2:length));
+hold on
+%plot(data(80-20,2:length),'r');
+plot(set3(1:length-1),'r');
+
+subplot(2,1,2);
+plot(portial3(1:length-1));
+hold on
+plot(a_his_airgaspotial(3,2:length),'r');
+%% 画3#煤气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(39,2:length));%设定
+subplot(2,1,2);
+plot(data(50,2:length));
+hold on
+plot(data(74,2:length),'r');
+
+%% 画3#空气流量与煤气阀门
+[~,length]=size(data);
+figure;
+subplot(2,1,1);
+plot(data(41,2:length));%设定
+subplot(2,1,2);
+plot(data(51,2:length));
+hold on
+plot(data(77,2:length),'r');
