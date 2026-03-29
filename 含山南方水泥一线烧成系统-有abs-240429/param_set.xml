@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="192.168.0.201" opcServerName="OPCServer.WinCC.1"/>
+      <parameter blj_a1="0.996" blj_a2="0.99" blj_cle_max="3" blj_cle_min="3" blj_delvd1_down="0.005" blj_delvd1_up="0.005" blj_delvd2_down="0.01" blj_delvd2_up="0.01" blj_delvd3_down="0.03" blj_delvd3_up="0.03" blj_delvd4_down="0.03" blj_delvd4_up="0.03" blj_lmd1="4500" blj_lmd2="3100" blj_max="3.7" blj_min="2.6" blj_vd="0.02" blj_xianfu="0.08" dtdlcntMax="1100"/>
+      <parameter fjl_a="0.007" fjl_alpha1="0.982" fjl_alpha2="0.98" fjl_b="0.01" fjl_c="0.01" fjl_delvd1="0.01" fjl_delvd2="0.015" fjl_delvd3="0.02" fjl_delvd4="0.025" fjl_lambda1="1000" fjl_lambda2="900" fjl_max="14" fjl_min="8" fjl_vd="0.02" fjl_xianfu="0.05"/>
+      <parameter dt_max="275" dt_min="130" dtdl_alpha="0.095" dtdl_beta="10" dtdl_delvd1="3" dtdl_delvd2="4" dtdl_delvd3="5" dtdl_gamma="0" dtdl_vd="2"/>
+      <parameter tm_alpha="0.17" tm_alpha1="0.5" tm_beta="10" tm_beta1="30" tm_gamma="0.01" tm_gamma1="0.02" tm_max="11.5" tm_min="5"/>
+      <parameter yt_alpha="0.0059" yt_alpha1="0.3" yt_beta="10" yt_beta1="10" yt_gamma="0.01" yt_gamma1="0.01" yt_max="93" yt_min="89"/>
+      <parameter DTlevel0="130" DTlevel1="126" DTlevel2="122" DTlevel3="118" WLlevel0="225" WLlevel1="215" WLlevel2="205" WLlevel3="195" fj11dl0="246" fj11dl1="246" fj11dl2="245" fj11dl3="245" fj11dl_defV0="255" fj11dl_defV1="250" fj11dl_defV2="245" fj11dl_defV3="240" zhuansu_MAX0="12" zhuansu_MAX1="12" zhuansu_MAX2="12" zhuansu_MAX3="12" zhuansu_MIN0="5.8" zhuansu_MIN1="5.1" zhuansu_MIN2="5" zhuansu_MIN3="4.9"/>
+      <parameter fjl_douti_P="0.03" fjl_weimeipress_P="0.18"/>
+      <parameter gwfj_alpha="0.003" gwfj_alpha1="0.3" gwfj_beta="2" gwfj_beta1="10" gwfj_gamma="0.01" gwfj_gamma1="0.01" gwfj_max="43" gwfj_min="36"/>
+      <parameter decomposing_furnace_tempr_2_lowerlimitS="830" decomposing_furnace_tempr_2_upperlimitS="880" fazu1_max="8" fazu1_min="8" fazu2_max="8" fazu2_min="8" snd_chamber_pressure_lowerlimitS="2.5" snd_chamber_pressure_upperlimitS="9"/>
+      <parameter fjl_a="0.03" fjl_alpha1="0.982" fjl_alpha2="0.98" fjl_b="0.01" fjl_c="0.01"/>
+      <parameter fjl_cle_max="3" fjl_cle_min="3" fjl_temp="0" fjl_weimei_panding="16.9"/>
+      <parameter manaotu="1" Toumei_modTime="200" toumei_single_change="-0.0125" Weimei_modTime="175" weimei_single_change="-0.0125"/>
+   </commdata>
+</paramdata>
