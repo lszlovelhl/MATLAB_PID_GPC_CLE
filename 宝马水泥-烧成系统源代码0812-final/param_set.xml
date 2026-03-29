@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="192.168.13.102" opcServerName="OPCServer.WinCC"/>
+      <parameter decomposing_furnace_tempr_2_lowerMax="850" decomposing_furnace_tempr_2_lowerMin="800" decomposing_furnace_tempr_2_upperMax="920" decomposing_furnace_tempr_2_upperMin="880"/>
+      <parameter snd_chamber_pressure_lowerMax="8" snd_chamber_pressure_lowerMin="5" snd_chamber_pressure_upperMax="8" snd_chamber_pressure_upperMin="5"/>
+      <parameter alarmsyn="0" bed2syn="0" bed3syn="0"/>
+      <parameter Barsynzone="0.3"/>
+      <parameter ke1="0.025" ke2="0.05" ke3="0.1" ke4="0.4" kec1="3" kec2="2" kec3="3" kec4="3" kuc1="1.8" kuc2="1.3" kuc3="0.8" kuc4="0.5"/>
+      <parameter upke="0.18" upkec="-3" upkuc="120" uplimit="10"/>
+      <parameter fjl_alpha1="0.994" fjl_lambda1="3500"/>
+      <parameter fjl_alpha2="0.99" fjl_lambda2="3300"/>
+      <parameter toumei_alpha="0.3" toumei_beta="10" toumei_gamma="0.01"/>
+      <parameter blj_alpha1="0.05" blj_beta1="80" blj_gamma1="0" blj_level_one="7.7" blj_level_three="8.1" blj_level_two="7.9" blj_low_pressure_sp="7.1"/>
+      <parameter blj_alpha2="0.04" blj_beta2="1200" blj_gamma2="0" level_one_sp="22" level_three_sp="26" level_two_sp="24" recover_sp="21"/>
+      <parameter junhua_alpha="0.26" junhua_beta="20" junhua_gamma="0.01"/>
+      <parameter gwfj_alpha="0.12" gwfj_beta="40" gwfj_gamma="0.01"/>
+      <parameter NH3_alpha1="0.06" NH3_beta1="40" NH3_gamma1="0.01" blj_level_one="7.5"/>
+      <parameter NH3_alpha2="1.3" NH3_beta2="20" NH3_gamma2="0.01" level_one_sp="23.3"/>
+      <parameter blj_level_two="7.7" fjl_alpha1="0.998" fjl_lambda1="4400"/>
+      <parameter fjl_alpha2="0.997" fjl_lambda2="3000" level_two_sp="24.5"/>
+      <parameter blj_level_three="7.9" toumei_alpha="0.3" toumei_beta="10" toumei_gamma="0.01"/>
+      <parameter blj_alpha1="0.978" blj_beta1="5" blj_gamma1="0.1" level_three_sp="26.5"/>
+      <parameter blj_alpha2="0.965" blj_beta2="2" blj_gamma2="0.1" recover_sp="20.5"/>
+      <parameter junhua_alpha="0.26" junhua_beta="20" junhua_gamma="0.01"/>
+      <parameter gwfj_alpha="0.12" gwfj_beta="40" gwfj_gamma="0.01"/>
+      <parameter NH3_alpha1="0.06" NH3_beta1="40" NH3_gamma1="0.01" blj_low_pressure_sp="7.1"/>
+      <parameter NH3_alpha2="1.3" NH3_beta2="20" NH3_gamma2="0.01" slqkxs="0.007"/>
+   </commdata>
+   <alarms>
+      <yaotou>
+         <parameter downlimit="5.7" kypA="20" uplimit="7" ydlBHcntMax="600" ydl_kzzq="240" ydl_vd="0.02"/>
+      </yaotou>
+      <yaowei>
+         <parameter downlimit="6" fjl_vd="0.005" scfqkxs="0.019" slqkxs="0.019" uplimit="12"/>
+      </yaowei>
+      <bilengji>
+         <parameter downlimit="18.5" ecfwsp="1250" pressure_vd="7.8" uplimit="26.5" yachuang_mv="0.41" ysphfjdl="63" ysphfjdlDV="0" zhuansu_mid="23"/>
+      </bilengji>
+      <NH3>
+         <parameter downlimit="30" uplimit="90"/>
+      </NH3>
+      <junhuaku>
+         <parameter downlimit="40" uplimit="60"/>
+      </junhuaku>
+      <gaowenfengji>
+         <parameter compensate="0.1" downlimit="40.5" rati="1.5" uplimit="46"/>
+      </gaowenfengji>
+   </alarms>
+</paramdata>

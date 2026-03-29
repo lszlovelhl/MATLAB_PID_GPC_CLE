@@ -1,0 +1,4 @@
+global data    sign_bichuang upid u_NH3 sign_NH3_ctrl NOX_limit NH3_limit
+global Up1 u_decomposing_furnace_tempr gpc_a u_decomposing_furnace_tempr_write u_write
+global pidloop sign_NH3_ctrl sign_NH3 u_NH3 Up3 yout3 delta_3cf
+global blj_freqMAX blj_freqMIN yaotou_coalMAX yaotou_coalMIN yaowei_coalMAX yaowei_coalMIN NH3_MAX NH3_MIN junhua_MAX junhua_MIN
