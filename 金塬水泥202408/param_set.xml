@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="130.0.0.53" opcServerName="Hollysys.MACSV5OPCServer.1"/>
+      <parameter fjl_alpha1="0.999" fjl_lambda1="2000"/>
+      <parameter fjl_alpha2="0.985" fjl_lambda2="1300"/>
+      <parameter toumei_alpha1="0.9805" toumei_alpha2="0.9845" toumei_gamma1="0" toumei_gamma2="0" toumei_lambda1="625" toumei_lambda2="695"/>
+      <parameter blj_alpha1="0.9855" blj_beta1="6800" blj_delvd1_down="0.06" blj_delvd1_up="0.06" blj_delvd2_down="0.04" blj_delvd2_up="0.04" blj_delvd3_down="0.02" blj_delvd3_up="0.02" blj_gamma1="0" blj_vd="0.03"/>
+      <parameter blj_alpha2="0.99" blj_beta2="7550" blj_gamma2="0" blj_xianfu="0.15"/>
+      <parameter WLlevel0="195" WLlevel1="190" WLlevel2="185" WLlevel3="180" fj11dl0="190" fj11dl1="188" fj11dl2="186" fj11dl3="185" fj11dl4="170" fj11dl_defV0="198" fj11dl_defV1="196" fj11dl_defV2="194" fj11dl_defV3="192" fj11dl_defV4="190"/>
+      <parameter fjl_alpha1="0.995" fjl_lambda1="90"/>
+      <parameter fjl_alpha2="0.988" fjl_lambda2="90"/>
+      <parameter toumei_alpha="0.4" toumei_beta="10" toumei_gamma="0.1"/>
+      <parameter blj_alpha1="0.0012" blj_beta1="15" blj_gamma1="0.05"/>
+      <parameter blj_alpha2="0.001" blj_beta2="30" blj_gamma2="0.01"/>
+      <parameter blj_alpha3="0.925" blj_beta3="220" blj_gamma3="0"/>
+      <parameter zhuansu_MAX="22" zhuansu_MIN="15"/>
+      <parameter fjl_MAX="12" fjl_MIN="6"/>
+      <parameter toumei_MAX="9" toumei_MIN="2"/>
+      <parameter SLvalveR_sp_MAX="85" SLvalveR_sp_MIN="50"/>
+      <parameter cd3_MAX="45" cd3_MIN="35"/>
+      <parameter blj4_alpha="0.3" blj4_beta="0.96" blj4_gamma="0"/>
+      <parameter SLcangzhong_alpha="0.5" SLcangzhong_beta="0.1" SLcangzhong_gamma="0"/>
+      <parameter ZHUANSU4_MAX="42" ZHUANSU4_MIN="30"/>
+      <parameter fjl_bcbl="0.2" fjl_douti_P="0.0003" fjl_temp_sp_down="5" fjl_temp_sp_up="0" fjl_xianfu="0.07" fjlumax="0.015"/>
+      <parameter yaotou_d="0" yaotou_i="19" yaotou_p="0.026"/>
+      <parameter toupai_max="35" toupai_min="25"/>
+      <parameter avgpress="130" avgspeed="17.8" avgt="280" changespeed="17.5" midspeed="13"/>
+      <parameter douti_d="0" douti_i="16" douti_p="0.52"/>
+      <parameter xialiao_max="185" xialiao_min="90"/>
+      <parameter fjdl_down="134" fjdl_up="0.3"/>
+      <parameter gwfj_d="0.01" gwfj_i="80" gwfj_p="0.0032"/>
+      <parameter weipai_max="40" weipai_min="34"/>
+      <parameter xhfj_d="0" xhfj_i="17.23" xhfj_p="0.365"/>
+      <parameter fjl_d="0" fjl_i="0.1" fjl_p="0.05"/>
+      <parameter fjl_CO_P1="0.06" fjl_CO_P2="0.04" fjl_CO_P3="0.02" fjl_CO_level1="3000" fjl_CO_level2="2100" fjl_CO_level3="1200"/>
+      <parameter fjl_delvd1="0.04" fjl_delvd2="0.02" fjl_delvd3="0.01" fjl_delvd4="0.04" fjl_delvd5="0.02" fjl_delvd6="0.01" fjl_vd="0.02"/>
+   </commdata>
+</paramdata>

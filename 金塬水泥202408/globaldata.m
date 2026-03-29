@@ -1,0 +1,5 @@
+global data  pidloop u_final sign_CO yaotoufy_sp toupai_speed flag_delta_I
+global shuipao1 shuipao2 fjl_man_plus_on fjl_man_minus_on blj_cd1_calc pidloop
+global blj_zhuansu_sp fjl_weimei_sp yaotou_sp weiliao_sp bljblj fjlumax
+global alarm_timer alarm_button_clicked fjl_fuzzy blj_cd3_calc blj_cd1_calc sign_blj
+global yaotou_on douti_on bli_pump_flag d_tsj third sign_fjl sign_fjl_pmg_gaspress test bljflag fjdl_up
