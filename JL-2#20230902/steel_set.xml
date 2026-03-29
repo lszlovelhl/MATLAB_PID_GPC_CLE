@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<steeltypedata>
+<common name="common">
+  <parameter OPCIP="127.0.0.1" OPCServer="OPCServer.WinCC.1" 
+            flow1_max="26500" flow2_max="36900" flow3_max="35500" flow4_max="10000" flow5_max="12000" flow1_min="500" flow2_min="500" flow3_min="500" flow4_min="1800" flow5_min="4000" fengji_valve_max="100" fengji_valve_min="10"
+            gas_valve_max1="60" gas_valve_max2="60" gas_valve_max3="60" gas_valve_max4="50" gas_valve_max5="50" gas_valve_min1="0" gas_valve_min2="0" gas_valve_min3="0" gas_valve_min4="0" gas_valve_min5="0"
+            air_valve_max1="95" air_valve_max2="80" air_valve_max3="80" air_valve_max4="90" air_valve_max5="90" air_valve_min1="2" air_valve_min2="3" air_valve_min3="3" air_valve_min4="2" air_valve_min5="2"
+            meiyan_valve_max1="95" meiyan_valve_max2="90" meiyan_valve_max3="90" meiyan_valve_max4="90" meiyan_valve_max5="90"  meiyan_valve_min1="2" meiyan_valve_min2="2" meiyan_valve_min3="2" meiyan_valve_min4="2" meiyan_valve_min5="2"
+            kongyan_valve_max1="95" kongyan_valve_max2="90" kongyan_valve_max3="90" kongyan_valve_max4="90" kongyan_valve_max5="90" kongyan_valve_min1="2" kongyan_valve_min2="2" kongyan_valve_min3="2" kongyan_valve_min4="2" kongyan_valve_min5="2"
+            meiqizongfa_valve_max="80" meiqizongfa_valve_min="7" kongmeitempuplimit="170" famensetoffValue="0.7" luwensetuplimit="30" min_air_limit='1500'
+            manalarmsound="0"
+            airgaspotialos1='0' airgaspotialos2='0' airgaspotialos3='0' airgaspotialos4='0' airgaspotialos5='0'
+            luyabili1="0.1" luyabili2="0.1" luyabili3="0.1" luyabili4="0.1" luyabili5="0.1"
+            nightoff="30000" dayoff="30000" ifrun="0" manaotu="1" modTime="2" single_change="15"
+            airflow1_max="21000" airflow2_max="25000" airflow3_max="25000" airflow4_max="10000" airflow5_max="10000"
+            yure_flow_max_down="500" jiayi_flow_max_down="500" jiaer_flow_max_down="500" junshang_flow_max_down="500" junxia_flow_max_down="500"
+            yureluwen_down="0" jiayiluwen_down="0" jiaerluwen_down="0" junshangluwen_down="0" junxialuwen_down="0"
+            smoke_tg_up="0" smoke_ta_up="0"
+            yinfj_max='100' yinfj_min='20'>
+  </parameter>
+</common>
+<steeltype name="235\195\300����"> 
+  <parameter second="55" t1="1070" t2="1220"  t3="1200" t4="1200" tj="1150" f1="16000" f2="16000" f3="10000" f4="10000">
+    <wait minute="20"  t1="0"     t2="0"    t3="0"    t4="0"    tj="0" />
+    <wait minute="40"  t1="-35"   t2="-35"  t3="-35"  t4="-35"  tj="-35" />
+    <wait minute="60"  t1="-50"   t2="-50"  t3="-50"  t4="-50" tj="-50" />
+    <wait minute="90"  t1="-100"  t2="-100" t3="-100" t4="-100" tj="-100" />
+    <wait minute="120" t1="-150"  t2="-150" t3="-150" t4="-150" tj="-150" />  
+    <wait minute="240" t1="-300"  t2="-300" t3="-300" t4="-300" tj="-300" />
+  </parameter>
+</steeltype>
+<steeltype name="235\195\300����"> 
+  <parameter second="55" t1="1100" t2="1280"  t3="1210" t4="1200" tj="1070" f1="16000" f2="16000" f3="10000" f4="10000">
+    <wait minute="20"  t1="0" t2="0" t3="0" t4="0" tj="0" />
+    <wait minute="40"  t1="-35"   t2="-35"   t3="-35"  t4="-35"   tj="-35" />
+    <wait minute="60"  t1="-50"   t2="-50"   t3="-50"  t4="-50"  tj="-50" />
+    <wait minute="90"  t1="-100"  t2="-100"  t3="-100" t4="-100"  tj="-100" />
+    <wait minute="120" t1="-150"  t2="-150"  t3="-150" t4="-150"  tj="-150" />  
+    <wait minute="240" t1="-300"  t2="-300"  t3="-300" t4="-300"  tj="-300" />
+  </parameter>
+</steeltype>
+<steeltype name="400����"> 
+  <parameter second="55" t1="1040" t2="1120"  t3="1100" t4="1200" tj="1150" f1="16000" f2="16000" f3="10000" f4="10000">
+    <wait minute="20"  t1="0"     t2="0"    t3="0"     t4="0" tj="0" />
+    <wait minute="40"  t1="-35"   t2="-35"  t3="-35"   t4="-35" tj="-35" />
+    <wait minute="60"  t1="-50"   t2="-50"  t3="-50"   t4="-50" tj="-50" />
+    <wait minute="90"  t1="-100"  t2="-100" t3="-100"  t4="-100" tj="-100" />
+    <wait minute="120" t1="-150"  t2="-150" t3="-150"  t4="-150" tj="-150" />  
+    <wait minute="240" t1="-300"  t2="-300" t3="-300"  t4="-300" tj="-300" />
+  </parameter>
+</steeltype>
+<steeltype name="400����"> 
+  <parameter second="55" t1="1060" t2="1140"  t3="1120" t4="1200" tj="1070" f1="15000" f2="16000" f3="10000" f4="10000">
+    <wait minute="20"  t1="0" t2="0" t3="0" t4="0" tj="0" />
+    <wait minute="40"  t1="-35"   t2="-35"   t3="-35"  t4="-35"  tj="-35" />
+    <wait minute="60"  t1="-50"   t2="-50"   t3="-50"  t4="-50" tj="-50" />
+    <wait minute="90"  t1="-100"  t2="-100"  t3="-100" t4="-100"  tj="-100" />
+    <wait minute="120" t1="-150"  t2="-150"  t3="-150" t4="-150" tj="-150" />  
+    <wait minute="240" t1="-300"  t2="-300"  t3="-300" t4="-300" tj="-300" />
+  </parameter>
+ </steeltype>
+</steeltypedata>
+
