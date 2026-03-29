@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<steeldata>
+   <common name="common">
+      <parameter OPCIP="192.168.2.231" OPCServer="OPCServer.WinCC.1" air_valve_max1="93" air_valve_max2="95" air_valve_max3="80" air_valve_max4="90" air_valve_min1="5" air_valve_min2="5" air_valve_min3="5" air_valve_min4="5" airgaspotialos1="0" airgaspotialos2="0" airgaspotialos3="0" airgaspotialos4="0" fcepresslimit="53" fengji_valve_max="36" fengji_valve_min="25" flow1_max="29500" flow1_min="15000" flow2_max="37000" flow2_min="16000" flow3_max="16500" flow3_min="5500" flow4_max="8000" flow4_min="1000" flowsetoff="0" flowsetoffswitch="0" gas_valve_max1="60" gas_valve_max2="60" gas_valve_max3="55" gas_valve_max4="85" gas_valve_min1="5" gas_valve_min2="5" gas_valve_min3="5" gas_valve_min4="5" junrekmfaweibi="1.4" kongyan1_prop="283" kongyan2_prop="411" kongyan3_prop="403" kongyan4_prop="529" kongyan_valve_max1="98" kongyan_valve_max2="98" kongyan_valve_max3="98" kongyan_valve_max4="90" kongyan_valve_min1="0" kongyan_valve_min2="1" kongyan_valve_min3="1" kongyan_valve_min4="0" lmd1_1="0.09" lmd1_2="0.08" lmd1_3="0.03" lmd1_4="0.05" lmd2_1="0.08" lmd2_2="0.07" lmd2_3="0.025" lmd2_4="0.033" lmd3_1="0.09" lmd3_2="0.08" lmd3_3="0.03" lmd3_4="0.05" luyabili1_a="0.29" luyabili1_g="0.29" luyabili2_a="0.21" luyabili2_g="0.21" luyabili3_a="0.125" luyabili3_g="0.125" luyabili4="0.1" manalarmsound="1" meiqizongfa_valve_max="80" meiqizongfa_valve_min="7" meiyan1_prop="569" meiyan2_prop="753" meiyan3_prop="503" meiyan4_prop="310" meiyan_valve_max1="98" meiyan_valve_max2="98" meiyan_valve_max3="98" meiyan_valve_max4="90" meiyan_valve_min1="8" meiyan_valve_min2="8" meiyan_valve_min3="8" meiyan_valve_min4="3" min_air_limit="1500" updownlimitos="10" yanfaospower="-2"/>
+   </common>
+   <steeltype name="235\195\300热坯">
+      <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1070" t2="1220" t3="1200" t4="1200" tj="1150">
+         <wait minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+         <wait minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+         <wait minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+         <wait minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+         <wait minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+         <wait minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+      </parameter>
+   </steeltype>
+   <steeltype name="235\195\300冷坯">
+      <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1100" t2="1280" t3="1210" t4="1200" tj="1070">
+         <wait minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+         <wait minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+         <wait minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+         <wait minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+         <wait minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+         <wait minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+      </parameter>
+   </steeltype>
+   <steeltype name="400热坯">
+      <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1040" t2="1120" t3="1100" t4="1200" tj="1150">
+         <wait minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+         <wait minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+         <wait minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+         <wait minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+         <wait minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+         <wait minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+      </parameter>
+   </steeltype>
+   <steeltype name="400冷坯">
+      <parameter f1="15000" f2="16000" f3="10000" f4="10000" second="55" t1="1060" t2="1140" t3="1120" t4="1200" tj="1070">
+         <wait minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+         <wait minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+         <wait minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+         <wait minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+         <wait minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+         <wait minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+      </parameter>
+   </steeltype>
+</steeldata>

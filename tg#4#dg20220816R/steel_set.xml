@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<steeldata>
+   <common name="common">
+      <parameter OPCIP="192.168.1.141" OPCIP1="192.168.2.21" OPCServer="OPCServer.WinCC.1" OPCServer1="NT6000.eNetOPC.4" air_valve_max1="96" air_valve_max2="90" air_valve_max3="90" air_valve_max4="90" air_valve_min1="10" air_valve_min2="10" air_valve_min3="10" air_valve_min4="5" airgaspotialos1="0.72" airgaspotialos2="0.7" airgaspotialos3="0.74" airgaspotialos4="0" fcepresslimit="35" fengji_valve_max="39" fengji_valve_min="31" flow1_max="24500" flow1_min="10000" flow2_max="32000" flow2_min="12000" flow3_max="17500" flow3_min="8500" flow4_max="8000" flow4_min="7000" flowsetoff="0" flowsetoffswitch="0" gas_valve_max1="65" gas_valve_max2="84" gas_valve_max3="55" gas_valve_max4="85" gas_valve_min1="10" gas_valve_min2="45" gas_valve_min3="6" gas_valve_min4="5" initime="[2022,8,14,0,0,0]" junheng_time="5" junrekmfaweibi="1.4" kongyan1_prop="300" kongyan2_prop="450" kongyan3_prop="300" kongyan4_prop="529" kongyan_valve_max1="98" kongyan_valve_max2="98" kongyan_valve_max3="98" kongyan_valve_max4="90" kongyan_valve_min1="0" kongyan_valve_min2="1" kongyan_valve_min3="1" kongyan_valve_min4="0" lmd1_1="0.09" lmd1_2="0.08" lmd1_3="0.03" lmd1_4="0.05" lmd2_1="0.08" lmd2_2="0.07" lmd2_3="0.025" lmd2_4="0.033" lmd3_1="0.09" lmd3_2="0.08" lmd3_3="0.03" lmd3_4="0.05" luyabili1_a="0.05" luyabili1_g="0.05" luyabili2_a="0.05" luyabili2_g="0.05" luyabili3_a="0.05" luyabili3_g="0.05" luyabili4="0.1" manalarmsound="1" meiqizongfa_valve_max="80" meiqizongfa_valve_min="7" meiyan1_prop="350" meiyan2_prop="450" meiyan3_prop="350" meiyan4_prop="310" meiyan_valve_max1="98" meiyan_valve_max2="98" meiyan_valve_max3="98" meiyan_valve_max4="90" meiyan_valve_min1="8" meiyan_valve_min2="8" meiyan_valve_min3="8" meiyan_valve_min4="3" min_air_limit="1500" runTimeBili="0.95" updownlimitos="20" yanfaospower="-2"/>
+   </common>
+   <time name="time">
+      <parameter disconnect_time="2022 8 16 17 45 8.67" during_time="2328.70343777778"/>
+   </time>
+   <jiayi name="jiayi">
+      <parameter air_flow_max="21100" air_ki="75" air_ki_da="80" air_kp="0.0039" air_kp_da="0.0042" fjl_delvd1="1000" fjl_delvd2="800" fjl_delvd3="700" fjl_vd="600" flow_buchang="300" gas_ki="55" gas_ki_da="55" gas_kp="0.001705" gas_kp_da="0.00185" gpc_a="0.97" gpc_a_da="0.965" gpc_lmd="0.0045" gpc_lmd_da="0.0042" kongyan_ki="75" kongyan_kp="0.3" meiyan_ki="78" meiyan_kp="0.32" opc_buchang="0" temp_buchang="5"/>
+   </jiayi>
+   <jiaer name="jiaer">
+      <parameter air_flow_max="26400" air_ki="70" air_ki_da="75" air_kp="0.0039" air_kp_da="0.0042" fjl_delvd1="1000" fjl_delvd2="800" fjl_delvd3="700" fjl_vd="600" flow_buchang="300" gas_ki="35" gas_ki_da="35" gas_kp="0.00185" gas_kp_da="0.0018" gpc_a="0.965" gpc_a_da="0.96" gpc_lmd="0.0043" gpc_lmd_da="0.004" kongyan_ki="78" kongyan_kp="0.32" meiyan_ki="80" meiyan_kp="0.34" opc_buchang="0" temp_buchang="5"/>
+   </jiaer>
+   <junre name="junre">
+      <parameter air_flow_max="15800" air_ki="70" air_ki_da="75" air_kp="0.0039" air_kp_da="0.0042" fjl_delvd1="800" fjl_delvd2="600" fjl_delvd3="400" fjl_vd="400" flow_buchang="300" gas_ki="55" gas_ki_da="55" gas_kp="0.00185" gas_kp_da="0.0018" gpc_a="0.965" gpc_a_da="0.95" gpc_lmd="0.0044" gpc_lmd_da="0.0043" kongyan_ki="70" kongyan_kp="0.31" meiyan_ki="75" meiyan_kp="0.33" opc_buchang="0" temp_buchang="5"/>
+   </junre>
+   <fengji name="fengji">
+      <parameter fengji1_ki="60" fengji1_kp="3.1" fengji2_ki="60" fengji2_kp="3.1"/>
+   </fengji>
+   <luya name="luya">
+      <parameter liuliangfaxianfu="3" luya_ki="30" luya_kp="1.1" paiyanfaxianfu="3" pypidmodtime="8"/>
+   </luya><!--460料--><!--330/380料--><!--330/380料使用的这个-->
+   <hot name="hot">
+      <parameter kongyan1_prop="285" kongyan2_prop="420" kongyan3_prop="330" kongyan4_prop="529" meiyan1_prop="380" meiyan2_prop="450" meiyan3_prop="425" meiyan4_prop="310"/>
+   </hot>
+   <middle name="middle">
+      <parameter kongyan1_prop="280" kongyan2_prop="380" kongyan3_prop="270" kongyan4_prop="529" meiyan1_prop="450" meiyan2_prop="450" meiyan3_prop="420" meiyan4_prop="310"/>
+   </middle>
+   <cold name="cold">
+      <parameter kongyan1_prop="280" kongyan2_prop="380" kongyan3_prop="270" kongyan4_prop="529" meiyan1_prop="450" meiyan2_prop="450" meiyan3_prop="420" meiyan4_prop="310"/>
+   </cold>
+   <hot1 name="hot1">
+      <parameter kongyan1_prop="330" kongyan2_prop="470" kongyan3_prop="320" kongyan4_prop="529" meiyan1_prop="480" meiyan2_prop="620" meiyan3_prop="490"/>
+   </hot1>
+   <middle1 name="middle1">
+      <parameter kongyan1_prop="330" kongyan2_prop="450" kongyan3_prop="330" kongyan4_prop="529" meiyan1_prop="460" meiyan2_prop="610" meiyan3_prop="480"/>
+   </middle1>
+   <cold1 name="cold1">
+      <parameter kongyan1_prop="350" kongyan2_prop="450" kongyan3_prop="350" kongyan4_prop="529" meiyan1_prop="460" meiyan2_prop="600" meiyan3_prop="470" meiyan4_prop="310"/>
+   </cold1>
+   <steel_type>
+      <item name="460热料">
+         <parameter>
+            <item kongyan1_prop="350" luyabili1_a="0.12" luyabili1_g="0.12" meiyan1_prop="450"/>
+            <item kongyan2_prop="490" luyabili2_a="0.12" luyabili2_g="0.12" meiyan2_prop="580"/>
+            <item kongyan3_prop="320" luyabili3_a="0.12" luyabili3_g="0.11" meiyan3_prop="430"/>
+         </parameter>
+      </item>
+      <item name="460凉料">
+         <parameter>
+            <item kongyan1_prop="300" luyabili1_a="0.12" luyabili1_g="0.12" meiyan1_prop="380"/>
+            <item kongyan2_prop="430" luyabili2_a="0.14" luyabili2_g="0.12" meiyan2_prop="600"/>
+            <item kongyan3_prop="280" luyabili3_a="0.13" luyabili3_g="0.14" meiyan3_prop="390"/>
+         </parameter>
+      </item>
+      <item name="380热料">
+         <parameter>
+            <item kongyan1_prop="270" luyabili1_a="0.13" luyabili1_g="0.13" meiyan1_prop="380"/>
+            <item kongyan2_prop="380" luyabili2_a="0.13" luyabili2_g="0.13" meiyan2_prop="490"/>
+            <item kongyan3_prop="280" luyabili3_a="0.08" luyabili3_g="0.13" meiyan3_prop="460"/>
+         </parameter>
+      </item>
+      <item name="380凉料">
+         <parameter>
+            <item kongyan1_prop="240" luyabili1_a="0.15" luyabili1_g="0.12" meiyan1_prop="400"/>
+            <item kongyan2_prop="410" luyabili2_a="0.15" luyabili2_g="0.15" meiyan2_prop="500"/>
+            <item kongyan3_prop="300" luyabili3_a="0.15" luyabili3_g="0.1" meiyan3_prop="480"/>
+         </parameter>
+      </item>
+   </steel_type>
+   <flow_limit name="flow_limit">
+      <parameter>
+         <item flow1_max="23000" flow1_min="11000"/>
+         <item flow2_max="32500" flow2_min="11500"/>
+         <item flow3_max="17500" flow3_min="8500"/>
+      </parameter>
+   </flow_limit>
+   <steeltype>
+      <item name="235\195\300热坯">
+         <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1070" t2="1220" t3="1200" t4="1200" tj="1150">
+            <wait>
+               <item minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+               <item minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+               <item minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+               <item minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+               <item minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+               <item minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+            </wait>
+         </parameter>
+      </item>
+      <item name="235\195\300冷坯">
+         <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1100" t2="1280" t3="1210" t4="1200" tj="1070">
+            <wait>
+               <item minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+               <item minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+               <item minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+               <item minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+               <item minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+               <item minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+            </wait>
+         </parameter>
+      </item>
+      <item name="400热坯">
+         <parameter f1="16000" f2="16000" f3="10000" f4="10000" second="55" t1="1040" t2="1120" t3="1100" t4="1200" tj="1150">
+            <wait>
+               <item minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+               <item minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+               <item minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+               <item minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+               <item minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+               <item minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+            </wait>
+         </parameter>
+      </item>
+      <item name="400冷坯">
+         <parameter f1="15000" f2="16000" f3="10000" f4="10000" second="55" t1="1060" t2="1140" t3="1120" t4="1200" tj="1070">
+            <wait>
+               <item minute="20" t1="0" t2="0" t3="0" t4="0" tj="0"/>
+               <item minute="40" t1="-35" t2="-35" t3="-35" t4="-35" tj="-35"/>
+               <item minute="60" t1="-50" t2="-50" t3="-50" t4="-50" tj="-50"/>
+               <item minute="90" t1="-100" t2="-100" t3="-100" t4="-100" tj="-100"/>
+               <item minute="120" t1="-150" t2="-150" t3="-150" t4="-150" tj="-150"/>
+               <item minute="240" t1="-300" t2="-300" t3="-300" t4="-300" tj="-300"/>
+            </wait>
+         </parameter>
+      </item>
+   </steeltype>
+   <steel>
+      <item name="20">
+         <parameter minute="20" t1="1050" t2="1220" t3="1230"/>
+      </item>
+      <item name="30">
+         <parameter minute="30" t1="1040" t2="1210" t3="1220"/>
+      </item>
+      <item name="40">
+         <parameter minute="40" t1="1030" t2="1200" t3="1210"/>
+      </item>
+      <item name="60">
+         <parameter minute="60" t1="1020" t2="1190" t3="1200"/>
+      </item>
+      <item name="90">
+         <parameter minute="90" t1="1010" t2="1180" t3="1190"/>
+      </item>
+   </steel>
+</steeldata>
