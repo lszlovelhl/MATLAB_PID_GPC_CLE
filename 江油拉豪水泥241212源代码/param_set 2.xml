@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="128.0.0.88" opcServerName="Hollysys.HOLLiASComm.1"/>
+      <parameter decomposing_furnace_tempr_2_lowerMax="865" decomposing_furnace_tempr_2_lowerMin="850" decomposing_furnace_tempr_2_upperMax="900" decomposing_furnace_tempr_2_upperMin="880"/>
+      <parameter snd_chamber_pressure_lowerMax="8" snd_chamber_pressure_lowerMin="5" snd_chamber_pressure_upperMax="8" snd_chamber_pressure_upperMin="5"/>
+      <parameter blj_a1="0.01" blj_a2="0.008" blj_b1="20" blj_b2="10" blj_lmd1="100" blj_lmd2="140"/>
+      <parameter tm_d1="0" tm_i1="100" tm_k1="30" tm_p1="0.7"/>
+      <parameter douti_d1="0" douti_i1="30" douti_k1="20" douti_p1="0.035"/>
+      <parameter fjl_a1="0.9795" fjl_a2="0.9785" fjl_b1="1.9295" fjl_b2="32.5" fjl_lmd1="3100" fjl_lmd2="2900"/>
+      <parameter blj_a1="0.9725" blj_a2="0.969" blj_b1="1.9295" blj_b2="32.5" blj_lmd1="130" blj_lmd2="130"/>
+      <parameter tm_d1="0" tm_i1="20" tm_k1="30" tm_p1="0.014"/>
+      <parameter douti_d1="0" douti_i1="20" douti_k1="20" douti_p1="0.035"/>
+      <parameter fjl_a1="0.9895" fjl_a2="0.9885" fjl_b1="1.9295" fjl_b2="32.5" fjl_lmd1="3250" fjl_lmd2="3250"/>
+      <parameter toupai_d1="0" toupai_i1="30" toupai_k1="30" toupai_p1="0.495"/>
+      <parameter toupai_d1="0" toupai_i1="30" toupai_k1="30" toupai_p1="0.495"/>
+      <parameter period="100" press_mean="9.15" zhuansu_mean="2.9" zhuansu_mid="2.9" zhuansu_step="2.8"/>
+      <parameter period="1200" press_mean="8.7" zhuansu_mean="2.6" zhuansu_mid="2.7" zhuansu_step="2.5"/>
+   </commdata>
+</paramdata>

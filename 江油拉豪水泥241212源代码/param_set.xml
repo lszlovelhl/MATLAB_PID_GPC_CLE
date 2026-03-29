@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paramdata>
+   <commdata>
+      <parameter opcID="128.0.0.88" opcServerName="Hollysys.HOLLiASComm.1"/>
+      <parameter decomposing_furnace_tempr_2_lowerMax="865" decomposing_furnace_tempr_2_lowerMin="850" decomposing_furnace_tempr_2_upperMax="900" decomposing_furnace_tempr_2_upperMin="880"/>
+      <parameter snd_chamber_pressure_lowerMax="8" snd_chamber_pressure_lowerMin="5" snd_chamber_pressure_upperMax="8" snd_chamber_pressure_upperMin="5"/>
+      <parameter blj_a1="0.0054" blj_a2="0.007" blj_b1="20" blj_b2="10" blj_lmd1="70" blj_lmd2="100" ecfw_sp="1115" gyfpressure_vd="14" gyfpressure_vd2="16.5" pressure_vd="8.8" yachuang_mv="0.02" ysfjdl="148" ysfjdlDV="1.5"/>
+      <parameter tm_d1="0" tm_i1="100" tm_k1="30" tm_p1="0.7"/>
+      <parameter douti_d1="0" douti_i1="30" douti_k1="20" douti_p1="0.035"/>
+      <parameter duliao_down="5.6" duliao_up="6.5" fjl_a1="0.9905" fjl_a2="0.9845" fjl_b1="1.9295" fjl_b2="32.5" fjl_lmd1="1150" fjl_lmd2="1080" fjl_p="0.048" fjl_vd="0.005" tdrl_bc_down="0.1" tdrl_bc_up="0.2" tidaiwu_x="0.45"/>
+      <parameter blj_a1="0.9725" blj_a2="0.969" blj_b1="1.9295" blj_b2="32.5" blj_lmd1="130" blj_lmd2="130" ecfw_sp="1240" pressure_vd="8.8" yachuang_mv="0.02" ysfjdl="150" ysfjdlDV="3"/>
+      <parameter tm_d1="0" tm_i1="20" tm_k1="30" tm_p1="0.014"/>
+      <parameter douti_d1="0" douti_i1="20" douti_k1="20" douti_p1="0.035"/>
+      <parameter fjl_a1="0.9895" fjl_a2="0.9885" fjl_b1="1.9295" fjl_b2="32.5" fjl_lmd1="3250" fjl_lmd2="3250" fjl_vd="0.005"/>
+      <parameter toupai_d1="0" toupai_i1="30" toupai_k1="30" toupai_p1="0.495"/>
+      <parameter toupai_d1="0" toupai_i1="30" toupai_k1="30" toupai_p1="0.495"/>
+      <parameter period="100" press_mean="9.1" zhuansu_mean="3.3" zhuansu_mid="3.4" zhuansu_step="3.4"/>
+      <parameter period="1200" press_mean="8.2" zhuansu_mean="3.6" zhuansu_mid="3.7" zhuansu_step="3.5"/>
+      <parameter kypA="30" ydlBHcntMax="600" ydl_d1="0" ydl_i1="25" ydl_kzzq="300" ydl_lbT="240" ydl_p1="0.0032" ydl_vd="0.005"/>
+      <parameter kypA="30" ydlBHcntMax="600" ydl_d1="0" ydl_i1="100" ydl_kzzq="300" ydl_lbT="240" ydl_p1="0.007" ydl_vd="0.005"/>
+      <parameter fjl_cle_down="15" fjl_cle_up="15" fjl_delvd1="0.015" fjl_delvd2="0.01" fjl_delvd3="0.005" fjl_vd="0.025" fjl_xianfu="0.07" fjl_temp_sp_up="0" fjl_temp_sp_down="4"/>
+   </commdata>
+</paramdata>
