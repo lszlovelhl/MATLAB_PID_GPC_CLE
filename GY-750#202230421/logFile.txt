@@ -1,0 +1,23 @@
+Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13  10-Mar-2023 17:29:43
+Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13  10-Mar-2023 17:29:46
+Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13  10-Mar-2023 17:29:49
+Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13  10-Mar-2023 17:34:24
+试图访问 pidloop(10,0)；索引必须为正整数或逻辑值。
+onTimer_io_4duan at 2035timercb at 30timercb at 13  10-Mar-2023 17:53:06
+试图访问 pidloop(10,0)；索引必须为正整数或逻辑值。
+onTimer_io_4duan at 2035timercb at 30timercb at 13  10-Mar-2023 17:53:07
+试图访问 pidloop(10,0)；索引必须为正整数或逻辑值。
+onTimer_io_4duan at 2035timercb at 30timercb at 13Stream.getSpaceAvailable at 145OutputStream.get.SpaceAvailable at 223Channel.onDataSent at 397@(source,data)obj.onDataSent() at 316  10-Mar-2023 17:53:08
+Failed to read XML file steel_set1.xml
+
+xml_read at 143onTimer_io_4duan at 31timercb at 30timercb at 13  23-Mar-2023 11:09:58
