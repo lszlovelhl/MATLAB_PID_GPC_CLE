@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水泥烧成先进过程控制（APC）代码档案 · 2022–2025</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1720'/%3E%3Cpath d='M7 22c2-6 5-6 9-2 3 3 7 1 9-4' stroke='%2322d3ee' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='7' cy='22' r='2' fill='%23f5b544'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#0e131c; --bg2:#141b28; --panel:#161f2e; --line:#232f42;
+    --ink:#e6edf5; --ink2:#9fb0c3; --ink3:#6c7f94;
+    --accent:#22d3ee; --accent2:#f5b544; --good:#34d399; --warn:#f87171;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:"Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;font-weight:300;font-size:16px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,pre{font-family:var(--mono)}
+
+  /* ===== 顶部导航 ===== */
+  nav{position:sticky;top:0;z-index:50;background:rgba(14,19,28,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:56px;overflow-x:auto;white-space:nowrap}
+  nav .brand{font-weight:700;font-size:15px;letter-spacing:.3px;color:var(--ink);flex:none}
+  nav .brand span{color:var(--accent)}
+  nav a.nav{color:var(--ink2);font-size:14px;flex:none}
+  nav a.nav:hover{color:var(--ink);text-decoration:none}
+
+  /* ===== Hero / 简介 ===== */
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .kicker{color:var(--accent);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:16px}
+  h1 .hl{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--ink2);max-width:760px;font-size:17px;margin-bottom:26px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:10px}
+  .stat{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--panel)}
+  .stat b{font-size:26px;font-weight:700;display:block;color:var(--accent)}
+  .stat span{font-size:13px;color:var(--ink3)}
+
+  /* ===== 通用区块 ===== */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(20px,2.6vw,27px);font-weight:700;margin-bottom:6px}
+  h2 .idx{color:var(--accent2);font-weight:500;margin-right:10px}
+  .sub{color:var(--ink2);margin-bottom:24px;max-width:820px}
+  h3{font-size:17px;font-weight:600;color:var(--ink);margin:18px 0 8px}
+
+  /* ===== 时间轴（grid 三列）===== */
+  .timeline{display:grid;grid-template-columns:64px 34px 1fr;gap:0;margin-top:8px}
+  .tl-node{display:grid;grid-template-columns:64px 34px 1fr;grid-column:1/-1;grid-template-rows:auto}
+  .tl-time{padding:14px 8px 14px 0;text-align:right;font-family:var(--mono);color:var(--accent2);font-size:14px;font-weight:500}
+  .tl-dot{justify-self:center;align-self:start;margin-top:20px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(34,211,238,.15);position:relative;z-index:2}
+  .tl-body{padding:10px 0 26px 20px;position:relative}
+  .tl-body::before{content:"";position:absolute;left:-20px;top:0;bottom:0;width:2px;background:var(--line)}
+  .tl-body h3{margin:0 0 3px;font-size:16px}
+  .tl-body .meta{font-family:var(--mono);font-size:12px;color:var(--ink3);margin-bottom:8px}
+  .tl-body p{font-size:14px;color:var(--ink2);max-width:680px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .tag{font-size:12px;padding:2px 9px;border-radius:20px;border:1px solid var(--line);color:var(--ink2);background:var(--bg2)}
+  .tag.g{color:#7ee0ff;border-color:rgba(34,211,238,.4)}
+  .tag.p{color:#8b9cf5;border-color:rgba(139,156,245,.4)}
+  .tag.c{color:#f5c97a;border-color:rgba(245,181,68,.4)}
+  .tag.f{color:#a3e88a;border-color:rgba(52,211,153,.4)}
+  .tl-node:last-child .tl-body::before{bottom:8px}
+
+  /* ===== 表格 ===== */
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+  thead th{background:var(--bg2);color:var(--ink2);font-weight:500;text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  td.mono,th.mono{font-family:var(--mono);font-size:12.5px}
+  td .ck{color:var(--good)}
+  td .no{color:var(--warn)}
+
+  /* ===== 算法卡片 ===== */
+  .algo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .algo{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel)}
+  .algo .ic{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:.5px}
+  .algo.c .ic{color:var(--accent2)}
+  .algo.f .ic{color:var(--good)}
+  .algo h4{font-size:16px;margin-bottom:6px}
+  .algo p{font-size:13.5px;color:var(--ink2)}
+  .algo code{background:var(--bg2);padding:1px 5px;border-radius:4px;font-size:12px}
+
+  /* ===== 架构图（分解炉串级）===== */
+  .arch{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:24px 18px;overflow-x:auto}
+  .arch svg{min-width:760px;width:100%;height:auto;display:block}
+  .arch-box{fill:var(--bg2);stroke:var(--line);stroke-width:1.2;rx:8}
+  .arch-box.hl{stroke:var(--accent);stroke-width:1.8}
+  .arch-box.hl2{stroke:var(--accent2);stroke-width:1.8}
+  .arch-var{fill:#e6edf5;font-size:13px;font-family:var(--mono)}
+  .arch-lab{fill:var(--ink3);font-size:10.5px;font-family:var(--sans)}
+  .arch-arr{stroke:var(--accent);stroke-width:1.8;fill:none;marker-end:url(#ar)}
+  .arch-arr2{stroke:var(--accent2);stroke-width:1.8;fill:none;marker-end:url(#ar)}
+
+  /* ===== 工程详情卡片 ===== */
+  .proj{border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:20px;background:var(--panel)}
+  .proj-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:12px}
+  .proj-head .pname{font-size:18px;font-weight:700}
+  .proj-head .ptime{font-family:var(--mono);font-size:12.5px;color:var(--accent2)}
+  .proj-head .pfile{font-family:var(--mono);font-size:12px;color:var(--ink3);background:var(--bg2);padding:2px 8px;border-radius:6px}
+  .proj p.desc{font-size:14.5px;color:var(--ink2);margin-bottom:12px;max-width:820px}
+  .kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:12px}
+  .kv .kitem{border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--bg2)}
+  .kv .kitem b{display:block;font-size:11px;color:var(--ink3);font-weight:500;margin-bottom:2px}
+  .kv .kitem span{font-size:13px;font-family:var(--mono);color:var(--ink)}
+  .hint{font-size:13px;color:var(--ink3);border-left:3px solid var(--line);padding-left:12px;margin-top:6px}
+
+  /* ===== 页脚 ===== */
+  footer{padding:34px 0;color:var(--ink3);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ===== 响应式 ===== */
+  @media(max-width:720px){
+    .timeline{grid-template-columns:52px 26px 1fr}
+    .tl-time{font-size:12px}
+    header{padding:44px 0 28px}
+    section{padding:32px 0}
+    body{font-size:15px}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">水泥烧成 <span>APC</span> 代码档案</span>
+    <a class="nav" href="#overview">总览</a>
+    <a class="nav" href="#timeline">演进时间轴</a>
+    <a class="nav" href="#algo">核心算法</a>
+    <a class="nav" href="#arch">代表架构</a>
+    <a class="nav" href="#projects">工程详情</a>
+    <a class="nav" href="#nav-guide">代码导航</a>
+  </div>
+</nav>
+
+<header id="overview">
+  <div class="wrap">
+    <div class="kicker">MATLAB_PID_GPC_CLE · 第一份工作 2022–2025</div>
+    <h1>水泥烧成系统<b class="hl">先进过程控制</b> 代码档案</h1>
+    <p class="lead">作者在 2022–2025 年第一份工作期间，为多家水泥厂部署的烧成系统先进过程控制（APC）程序。以 MATLAB + DCS/OPC 为底座，覆盖广义预测控制（GPC）、增量式 PID、串级控制、以及自研的 CLE 趋势前馈补偿与模糊控制（FuzzyControl）。本页把全部 10 个现场工程按时间线、算法分布与架构做了结构化梳理，方便快速查阅与理解。</p>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>个现场工程</span></div>
+      <div class="stat"><b>2022–2025</b><span>时间跨度</span></div>
+      <div class="stat"><b>4</b><span>类核心算法</span></div>
+      <div class="stat"><b>342+</b><span>个 MATLAB 文件</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 演进时间轴 ===== -->
+<section id="timeline">
+  <div class="wrap">
+    <h2><span class="idx">01</span>演进时间轴</h2>
+    <p class="sub">从 2022 的多通道独立 GPC，到 2024 的串级 + CLE，再到 2025 的模糊控制——可以看到控制策略随现场工况复杂度逐步升级。</p>
+    <div class="timeline">
+      <div class="tl-node">
+        <div class="tl-time">2022-03</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>GY-750（高邑 750 线）</h3>
+          <div class="meta">onTimer_io_4duan.m · 4 通道并行 GPC</div>
+          <p>早期多通道架构：用 GPC 参数矩阵 <code>A(1..4)/B(1..4)</code> 并行驱动 4 个回路，同一套预测核心复用。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2022-08</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>tg#4（天钢 4#）</h3>
+          <div class="meta">on_timer1.m + onTimer_io_4duan.m · 3 通道 GPC</div>
+          <p>引入 <b>FuzzyControl（模糊控制）</b>与风/气停机联锁控制，用于点火升温等非线性阶段；GPC 用于稳态调节。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag f">Fuzzy</span><span class="tag p">PID</span><span class="tag">停机联锁</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2022-08</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>宝马水泥（烧成系统）</h3>
+          <div class="meta">on_timer.m · 6 回路 PID + 分解炉 GPC</div>
+          <p>标准单窑架构：冷却风、生料均化、氨水内外环、系统风压、头煤共 6 个 PID 回路 + 分解炉温度 GPC。这是本档案最早做核心重构的工程。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2023-09</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>JL-2（嘉陵 2 线）</h3>
+          <div class="meta">onTimer_io_4duan.m · 5 通道并行 GPC</div>
+          <p>多通道 GPC 升级到 5 个并行回路，预测控制覆盖面更广。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2024-04</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>含山南方水泥（一线，带 ABS）</h3>
+          <div class="meta">on_timer.m · 分解炉 GPC + 篦冷机 GPC</div>
+          <p>GPC 从分解炉扩展到<b>篦冷机转速</b>（<code>gpc_blj_speed</code>），并在分解炉侧出现 CLE 趋势补偿（<code>fjl_cle_test</code>）。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2024-08</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>金塬水泥</h3>
+          <div class="meta">on_timer.m + control_code.m · 多回路 GPC + CLE</div>
+          <p>GPC 覆盖分解炉、篦冷机一段、头煤压力、尾煤四类回路；<b>CLE 趋势前馈</b>（428–495 行）成熟用于篦冷机温度补偿。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2024-12</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>江油拉豪水泥</h3>
+          <div class="meta">on_timer.m + control_code.m · 分解炉串级（GPC 外环 + PID 内环）+ CLE</div>
+          <p>本档案<b>最完整的串级 + CLE 工程</b>：分解炉 GPC 外环算喂煤设定，PID 内环跟踪喂煤；篦冷机一段 PID + 三段比例联动；带 CLE 参数。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag c">CLE</span><span class="tag">串级</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2025-07</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>溧水天山水泥</h3>
+          <div class="meta">on_timer.m · 分解炉串级 + GPC</div>
+          <p>沿用江油拉豪的串级思路（<code>wmfy_sp</code> = GPC 输出喂煤设定），现场工况收敛到更稳定的串级结构。</p>
+          <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag">串级</span></div>
+        </div>
+      </div>
+      <div class="tl-node">
+        <div class="tl-time">2025-07</div><div class="tl-dot"></div>
+        <div class="tl-body">
+          <h3>gaoyi3# / gaoyi4#（高邑 3、4 线）</h3>
+          <div class="meta">on_timer.m · 模糊 PID + 常规 PID</div>
+          <p>以 <b>FuzzyControl（二维模糊 PID）</b>配合常规 PID，针对点火升温等大非线性工况做自适应调节，GPC 不再主导。</p>
+          <div class="tags"><span class="tag f">Fuzzy</span><span class="tag p">PID</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 核心算法 ===== -->
+<section id="algo">
+  <div class="wrap">
+    <h2><span class="idx">02</span>核心算法</h2>
+    <p class="sub">四类算法按控制任务分工：慢对象用 GPC 预测，快/回路级用增量 PID，趋势性扰动用 CLE 前馈，非线性阶段用模糊控制。</p>
+    <div class="algo-grid">
+      <div class="algo">
+        <div class="ic">GPC · 广义预测控制</div>
+        <h4>gpc_clac.m</h4>
+        <p>基于 Diophantine 方程求解 + 预测矩阵（G/F/H），在线求控制增量 <code>ΔU = K(Yd−Y0)</code>，带柔化轨迹与自适应加权 λ。适用于分解炉温度、篦冷机等大惯性慢回路。<code>gpc_clac1.m</code> 为变体（N=50/Nu=15）。</p>
+      </div>
+      <div class="algo">
+        <div class="ic">PID · 增量式</div>
+        <h4>pid_calc.m</h4>
+        <p>13 元素参数向量的增量式 PID：<code>Δu = kp[(e0−e1) + e0/ti + td(e0−2e1+e2)]</code>，含死区与输出限幅。供冷却风、生料均化、氨水、风压、头煤等多个回路复用。</p>
+      </div>
+      <div class="algo c">
+        <div class="ic">CLE · 趋势前馈补偿（自研）</div>
+        <h4>趋势识别 + 补偿叠加</h4>
+        <p>取 10s 窗口 max/min 检测连续上升/下降趋势，温度持续偏高就压控制量（<code>−delvd</code>）、偏低就加，按偏差分档。作为外部扰动大时的前馈补偿叠加在 GPC/PID 之上。</p>
+      </div>
+      <div class="algo f">
+        <div class="ic">Fuzzy · 模糊控制</div>
+        <h4>FuzzyControl.m</h4>
+        <p>二维 Mamdani 模糊 PID：输入误差 <code>Et</code> 与误差变化率 <code>ECt</code>，输出控制增量 <code>ΔF</code>，7×7 规则表。用于点火升温等大非线性阶段。</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:28px">算法 × 工程分布矩阵</h3>
+    <div class="tbl-scroll">
+      <table>
+        <colgroup><col style="width:26%"><col style="width:18%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:17%"></colgroup>
+        <thead>
+          <tr><th class="mono">工程</th><th class="mono">时间</th><th>GPC</th><th>PID</th><th>CLE</th><th>Fuzzy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">GY-750#202230421</td><td class="mono">2022-03</td><td class="ck">4 通道</td><td class="ck">✓</td><td class="ck">✓</td><td class="no">—</td></tr>
+          <tr><td class="mono">tg#4#dg20220816R</td><td class="mono">2022-08</td><td class="ck">3 通道</td><td class="ck">✓</td><td class="no">—</td><td class="ck">✓</td></tr>
+          <tr><td class="mono">宝马水泥 0812</td><td class="mono">2022-08</td><td class="ck">✓</td><td class="ck">6 回路</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td class="mono">JL-2#20230902</td><td class="mono">2023-09</td><td class="ck">5 通道</td><td class="ck">✓</td><td class="ck">✓</td><td class="no">—</td></tr>
+          <tr><td class="mono">含山南方 240429</td><td class="mono">2024-04</td><td class="ck">分解炉+篦冷机</td><td class="ck">✓</td><td class="ck">✓</td><td class="no">—</td></tr>
+          <tr><td class="mono">金塬 202408</td><td class="mono">2024-08</td><td class="ck">多回路</td><td class="ck">✓</td><td class="ck">✓</td><td class="no">—</td></tr>
+          <tr><td class="mono">江油拉豪 241212</td><td class="mono">2024-12</td><td class="ck">串级外环</td><td class="ck">内环+篦冷机</td><td class="ck">✓</td><td class="no">—</td></tr>
+          <tr><td class="mono">溧水天山 250707</td><td class="mono">2025-07</td><td class="ck">串级外环</td><td class="ck">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td class="mono">gaoyi3# rfl</td><td class="mono">2025-07</td><td class="no">—</td><td class="ck">✓</td><td class="no">—</td><td class="ck">✓</td></tr>
+          <tr><td class="mono">gaoyi4# rfl</td><td class="mono">2025-07</td><td class="no">—</td><td class="ck">✓</td><td class="no">—</td><td class="ck">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">注：「通道」指 GPC 用参数矩阵 <code>A(1..N)/B(1..N)</code> 并行驱动的回路数；CLE 出现在含山、金塬、江油拉豪、GY-750、JL-2 的趋势前馈中。</p>
+  </div>
+</section>
+
+<!-- ===== 代表架构 ===== -->
+<section id="arch">
+  <div class="wrap">
+    <h2><span class="idx">03</span>三大代表架构</h2>
+    <p class="sub">把 10 个工程抽象为三类可复用的控制架构：分解炉串级、篦冷机多回路、CLE 趋势前馈。串级在江油拉豪最完整，CLE 在金塬最典型。</p>
+
+    <h3>3.1 分解炉串级控制（江油拉豪 / 溧水天山）</h3>
+    <p class="sub" style="margin-bottom:12px">外环 GPC 根据分解炉温度偏差算出「喂煤设定」，内环 PID 快速跟踪实际喂煤——先用预测控制把慢温度回路稳住，再用增量 PID 把执行端喂煤跟住。代码位于 <code>on_timer.m</code> 840–884 行。</p>
+    <div class="arch">
+      <svg viewBox="0 0 1000 230" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/></marker>
+        </defs>
+        <!-- 设定 -->
+        <rect class="arch-box" x="30" y="85" width="150" height="60"/>
+        <text class="arch-lab" x="105" y="108" text-anchor="middle">温度设定</text>
+        <text class="arch-var" x="105" y="128" text-anchor="middle">T_sp</text>
+        <!-- GPC外环 -->
+        <rect class="arch-box hl" x="260" y="70" width="170" height="90"/>
+        <text class="arch-lab" x="345" y="100" text-anchor="middle">外环 · GPC</text>
+        <text class="arch-var" x="345" y="122" text-anchor="middle">gpc_clac</text>
+        <text class="arch-lab" x="345" y="142" text-anchor="middle">预测控制 · 10s 周期</text>
+        <!-- PID内环 -->
+        <rect class="arch-box hl2" x="520" y="70" width="170" height="90"/>
+        <text class="arch-lab" x="605" y="100" text-anchor="middle">内环 · PID</text>
+        <text class="arch-var" x="605" y="122" text-anchor="middle">pid_calc</text>
+        <text class="arch-lab" x="605" y="142" text-anchor="middle">增量式 · 跟踪喂煤</text>
+        <!-- 对象 -->
+        <rect class="arch-box" x="780" y="85" width="170" height="60"/>
+        <text class="arch-lab" x="865" y="108" text-anchor="middle">分解炉对象</text>
+        <text class="arch-var" x="865" y="128" text-anchor="middle">喂煤 → 温度</text>
+        <!-- 连线 -->
+        <path class="arch-arr" d="M180,115 H260"/>
+        <text class="arch-lab" x="220" y="102" text-anchor="middle">e</text>
+        <path class="arch-arr" d="M430,115 H520"/>
+        <text class="arch-var" x="475" y="102" text-anchor="middle">wmfy_sp</text>
+        <text class="arch-lab" x="475" y="132" text-anchor="middle">喂煤设定</text>
+        <path class="arch-arr" d="M690,115 H780"/>
+        <text class="arch-var" x="735" y="102" text-anchor="middle">u_feed</text>
+        <text class="arch-lab" x="735" y="132" text-anchor="middle">喂煤量</text>
+        <path class="arch-arr" d="M865,145 V200 H345 V160"/>
+        <text class="arch-lab" x="605" y="196" text-anchor="middle">温度反馈（外环 PV）</text>
+        <!-- 内环 pv 反馈 -->
+        <path class="arch-arr2" d="M690,140 V205 H605 V160"/>
+        <text class="arch-lab" x="600" y="196" text-anchor="middle">实际喂煤（内环 PV）</text>
+        <!-- 输出标注 -->
+        <text class="arch-var" x="950" y="115">→ T_pv</text>
+        <text class="arch-lab" x="890" y="30" font-size="12">闭环：温度偏差 → GPC 算喂煤设定 → PID 跟踪喂煤 → 温度变化</text>
+      </svg>
+    </div>
+
+    <h3>3.2 篦冷机多回路控制（金塬 / 含山 / 江油拉豪）</h3>
+    <p class="sub">篦冷机侧同时存在两条策略：一是对一段温度/料层用 GPC 或 PID 做稳态控制，二是用 CLE 做趋势前馈。江油拉豪的 <code>control_code.m</code> 更进一步——一段 PID 输出 <code>upid(1)</code>，二段、三段转速按比例联动 <code>upid(2)=1.4·upid(1)</code>、<code>upid(3)=2·upid(1)</code>。</p>
+
+    <h3>3.3 CLE 趋势前馈补偿（金塬 428–495 行）</h3>
+    <p class="sub">外部扰动大时，常规 GPC/PID 响应偏慢。CLE 取三个相邻 10s 窗口的 max/min 判断趋势：连续上升（温度偏高趋势）→ 输出减 <code>delvd</code>；连续下降 → 输出加 <code>delvd</code>；偏差越大补偿量越大，按 <code>blj_delvd1/2/3</code> 分档。相当于给控制器加了一个「看趋势提前动作」的前馈支路。</p>
+    <div class="tbl-scroll" style="max-width:640px">
+      <table>
+        <colgroup><col style="width:50%"><col style="width:50%"></colgroup>
+        <thead><tr><th class="mono">趋势判断</th><th class="mono">补偿动作</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">连续上升 (mx1&gt;mx2&gt;mx3)</td><td class="mono">输出 − (blj_vd + delvd)</td></tr>
+          <tr><td class="mono">连续下降 (mx1&lt;mx2&lt;mx3)</td><td class="mono">输出 + (blj_vd + delvd)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 工程详情 ===== -->
+<section id="projects">
+  <div class="wrap">
+    <h2><span class="idx">04</span>全部工程详情</h2>
+    <p class="sub">按时间从早到晚排列。每个工程给出入口文件、控制回路与关键技术定位，便于直接进对应目录查代码。</p>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">GY-750#（高邑 750 线）</span><span class="ptime">2022-03</span><span class="pfile">onTimer_io_4duan.m</span></div>
+      <p class="desc">早期多通道 GPC 架构，用参数矩阵同时驱动 4 个预测回路，并带有 CLE 趋势补偿。是「多通道并行预测控制」的起点。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>4 通道并行 GPC + PID</span></div>
+        <div class="kitem"><b>GPC 调用</b><span>tempu(1..4)=gpc_clac(A(1..4),…)</span></div>
+        <div class="kitem"><b>CLE</b><span>onTimer_io_4duan.m 1395–1482</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">tg#4#dg（天钢 4#）</span><span class="ptime">2022-08</span><span class="pfile">on_timer1.m + onTimer_io_4duan.m</span></div>
+      <p class="desc">3 通道 GPC + 模糊控制（FuzzyControl）+ 风/气停机联锁。首次把模糊控制用于点火升温等非线性阶段，GPC 负责稳态调节。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>3 通道 GPC + Fuzzy + 联锁</span></div>
+        <div class="kitem"><b>模糊控制</b><span>FuzzyControl.m（Et/ECt→ΔF）</span></div>
+        <div class="kitem"><b>停机联锁</b><span>air/gas_stop_control.m</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag f">Fuzzy</span><span class="tag p">PID</span><span class="tag">停机联锁</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">宝马水泥（烧成系统）</span><span class="ptime">2022-08</span><span class="pfile">on_timer.m</span></div>
+      <p class="desc">标准单窑架构：冷却风、生料均化、氨水内外环、系统风压、头煤共 6 个 PID 回路，加分解炉温度 GPC。仓库内 <code>refactored/</code> 是作者对核心 GPC/PID 做的参数化重构版（默认输出与现场一致）。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>6 回路 PID + 分解炉 GPC</span></div>
+        <div class="kitem"><b>分解炉模型</b><span>A=[-0.9769,1] B=[0.8642]</span></div>
+        <div class="kitem"><b>GPC 调用</b><span>on_timer.m:658</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/ (gpc_clac_v2)</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">JL-2#（嘉陵 2 线）</span><span class="ptime">2023-09</span><span class="pfile">onTimer_io_4duan.m</span></div>
+      <p class="desc">多通道 GPC 升级到 5 个并行回路，覆盖面更广；保留 CLE 趋势补偿。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>5 通道并行 GPC + PID</span></div>
+        <div class="kitem"><b>GPC 调用</b><span>tempu(1..5)=gpc_clac(A(1..5),…)</span></div>
+        <div class="kitem"><b>CLE</b><span>onTimer_io_4duan.m 1787–1871</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">含山南方水泥（一线，带 ABS）</span><span class="ptime">2024-04</span><span class="pfile">on_timer.m</span></div>
+      <p class="desc">GPC 从分解炉扩展到篦冷机转速（<code>gpc_blj_speed</code>，模型 A2/B2），分解炉侧开始出现 CLE 趋势补偿（<code>fjl_cle_test</code>）。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>分解炉 GPC + 篦冷机 GPC</span></div>
+        <div class="kitem"><b>篦冷机 GPC</b><span>gpc_blj_speed (A2/B2)</span></div>
+        <div class="kitem"><b>分解炉模型</b><span>A≈[-0.9398,1]（20s 采样）</span></div>
+        <div class="kitem"><b>CLE</b><span>fjl_cle_test</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">金塬水泥</span><span class="ptime">2024-08</span><span class="pfile">on_timer.m + control_code.m</span></div>
+      <p class="desc">GPC 覆盖分解炉、篦冷机一段、头煤压力、尾煤四类回路；CLE 趋势前馈在此成熟（428–495 行），用于篦冷机温度补偿。是多回路 + 前馈的集大成工程。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>多回路 GPC + CLE</span></div>
+        <div class="kitem"><b>篦冷机 CLE</b><span>on_timer.m:428–495</span></div>
+        <div class="kitem"><b>分解炉模型</b><span>A=[-0.995967,1]</span></div>
+        <div class="kitem"><b>多回路 GPC</b><span>分解炉/篦冷机/头煤/尾煤</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">江油拉豪水泥</span><span class="ptime">2024-12</span><span class="pfile">on_timer.m + control_code.m</span></div>
+      <p class="desc">本档案最完整的串级 + CLE 工程。分解炉「GPC 外环 → PID 内环」串级（on_timer.m 840–884）；篦冷机一段 PID + 二/三段比例联动（control_code.m）；带分解炉 CLE 参数；含 <code>gpc_clac1</code> 变体（N=50/Nu=15）。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>分解炉串级 + 篦冷机联动</span></div>
+        <div class="kitem"><b>串级定位</b><span>on_timer.m:843(GPC) :866(PID)</span></div>
+        <div class="kitem"><b>分解炉模型</b><span>A=[-0.995967,1] B=[0.0907]</span></div>
+        <div class="kitem"><b>GPC 变体</b><span>gpc_clac1.m (N=50/Nu=15)</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag c">CLE</span><span class="tag">串级</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">溧水天山水泥</span><span class="ptime">2025-07</span><span class="pfile">on_timer.m</span></div>
+      <p class="desc">沿用江油拉豪的串级思路：<code>wmfy_sp</code> 由 GPC 算出喂煤设定，内环 PID 跟踪。现场工况收敛到稳定的串级结构。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>分解炉串级 + GPC</span></div>
+        <div class="kitem"><b>串级定位</b><span>on_timer.m:779 (wmfy_sp)</span></div>
+        <div class="kitem"><b>分解炉模型</b><span>A=[-0.9881,1]（15s 采样）</span></div>
+      </div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag">串级</span></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-head"><span class="pname">gaoyi3# / gaoyi4#（高邑 3、4 线）</span><span class="ptime">2025-07</span><span class="pfile">on_timer.m</span></div>
+      <p class="desc">以二维模糊 PID（FuzzyControl：输入 Et/ECt，输出 ΔF，7×7 规则表）配合常规 PID，针对点火升温等大非线性工况做自适应调节，GPC 不再主导。gaoyi4 另含 model_draw 建模工具。</p>
+      <div class="kv">
+        <div class="kitem"><b>控制策略</b><span>模糊 PID + 常规 PID</span></div>
+        <div class="kitem"><b>模糊控制</b><span>FuzzyControl.m（Et/ECt→ΔF）</span></div>
+        <div class="kitem"><b>建模工具</b><span>model_draw.m（gaoyi4）</span></div>
+      </div>
+      <div class="tags"><span class="tag f">Fuzzy</span><span class="tag p">PID</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 代码导航 ===== -->
+<section id="nav-guide">
+  <div class="wrap">
+    <h2><span class="idx">05</span>代码导航</h2>
+    <p class="sub">各工程入口都是定时器回调 <code>on_timer.m</code>（部分为 <code>onTimer_io_4duan.m</code>），从 OPC/DCS 读数据、按周期调度各回路。核心算法函数在各工程内基本同名复用。</p>
+    <div class="tbl-scroll">
+      <table>
+        <colgroup><col style="width:22%"><col style="width:30%"><col style="width:48%"></colgroup>
+        <thead>
+          <tr><th class="mono">文件</th><th class="mono">作用</th><th class="mono">关键说明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">on_timer.m / onTimer_io_4duan.m / on_timer1.m</td><td>定时器主循环</td><td>读 OPC 数据 → 解析 xml 参数 → 各回路调度（按 mod(b,周期) 触发）→ 输出到 P_write</td></tr>
+          <tr><td class="mono">control_code.m</td><td>串级/联动控制</td><td>江油拉豪、金塬：篦冷机一段 PID + 三段比例联动 + 分解炉 GPC 外环</td></tr>
+          <tr><td class="mono">gpc_clac.m</td><td>广义预测控制核心</td><td>Diophantine 求解 + 预测矩阵 + 自适应 λ；gpc_clac1.m 为参数变体（N=50/Nu=15）</td></tr>
+          <tr><td class="mono">pid_calc.m</td><td>增量式 PID</td><td>13 元素参数向量（sp/pv/mv/误差/pid/限幅/死区），多回路共用</td></tr>
+          <tr><td class="mono">FuzzyControl.m</td><td>二维模糊 PID</td><td>Mamdani：输入 Et/ECt，输出 ΔF，7×7 规则表；点火升温等非线性阶段</td></tr>
+          <tr><td class="mono">leastmodel.m / model_draw.m</td><td>离线建模/验证</td><td>递推最小二乘辨识 GPC 所需的 A/B 模型参数</td></tr>
+          <tr><td class="mono">on_timer.m 内 CLE 块</td><td>趋势前馈补偿</td><td>金塬 428–495 行；GY-750/JL-2 内联于 onTimer_io_4duan.m</td></tr>
+          <tr><td class="mono">refactored/</td><td>宝马工程重构版</td><td>gpc_clac_v2 / pid_calc_v2 / gpc_matrices_v2，参数化 + 修除零，默认输出与现场一致</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">提示：大部分 .m 为 GBK 编码，中文注释在 UTF-8 编辑器下会显示乱码——阅读时可先用文本工具转码，或直接看英文变量名与结构。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>MATLAB_PID_GPC_CLE · 水泥烧成先进过程控制代码档案</span>
+    <span>2022–2025 现场工程 · 由梁龙整理</span>
+  </div>
+</footer>
+
+</body>
+</html>
