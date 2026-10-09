@@ -379,8 +379,9 @@
         <div class="kitem"><b>控制策略</b><span>4 通道并行 GPC + PID</span></div>
         <div class="kitem"><b>GPC 调用</b><span>tempu(1..4)=gpc_clac(A(1..4),…)</span></div>
         <div class="kitem"><b>CLE</b><span>onTimer_io_4duan.m 1395–1482</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（增益 1.0 · 限幅 ±3000）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -390,8 +391,9 @@
         <div class="kitem"><b>控制策略</b><span>3 通道 GPC + Fuzzy + 联锁</span></div>
         <div class="kitem"><b>模糊控制</b><span>FuzzyControl.m（Et/ECt→ΔF）</span></div>
         <div class="kitem"><b>停机联锁</b><span>air/gas_stop_control.m</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（增益 1.0 · 限幅 ±3000）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag f">Fuzzy</span><span class="tag p">PID</span><span class="tag">停机联锁</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag f">Fuzzy</span><span class="tag p">PID</span><span class="tag">停机联锁</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -413,8 +415,9 @@
         <div class="kitem"><b>控制策略</b><span>5 通道并行 GPC + PID</span></div>
         <div class="kitem"><b>GPC 调用</b><span>tempu(1..5)=gpc_clac(A(1..5),…)</span></div>
         <div class="kitem"><b>CLE</b><span>onTimer_io_4duan.m 1787–1871</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（增益 1.0 · 限幅 ±3000）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -425,8 +428,9 @@
         <div class="kitem"><b>篦冷机 GPC</b><span>gpc_blj_speed (A2/B2)</span></div>
         <div class="kitem"><b>分解炉模型</b><span>A≈[-0.9398,1]（20s 采样）</span></div>
         <div class="kitem"><b>CLE</b><span>fjl_cle_test</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（默认参数=现场原值）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -437,8 +441,9 @@
         <div class="kitem"><b>篦冷机 CLE</b><span>on_timer.m:428–495</span></div>
         <div class="kitem"><b>分解炉模型</b><span>A=[-0.995967,1]</span></div>
         <div class="kitem"><b>多回路 GPC</b><span>分解炉/篦冷机/头煤/尾煤</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（N=180 现场整定值保留）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag c">CLE</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -449,8 +454,9 @@
         <div class="kitem"><b>串级定位</b><span>on_timer.m:843(GPC) :866(PID)</span></div>
         <div class="kitem"><b>分解炉模型</b><span>A=[-0.995967,1] B=[0.0907]</span></div>
         <div class="kitem"><b>GPC 变体</b><span>gpc_clac1.m (N=50/Nu=15)</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（gpc_clac_v2 + gpc_clac1_v2）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag c">CLE</span><span class="tag">串级</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag c">CLE</span><span class="tag">串级</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -460,8 +466,9 @@
         <div class="kitem"><b>控制策略</b><span>分解炉串级 + GPC</span></div>
         <div class="kitem"><b>串级定位</b><span>on_timer.m:779 (wmfy_sp)</span></div>
         <div class="kitem"><b>分解炉模型</b><span>A=[-0.9881,1]（15s 采样）</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（默认参数=现场原值）</span></div>
       </div>
-      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag">串级</span></div>
+      <div class="tags"><span class="tag g">GPC</span><span class="tag p">PID</span><span class="tag">串级</span><span class="tag">已重构</span></div>
     </div>
 
     <div class="proj">
@@ -471,8 +478,9 @@
         <div class="kitem"><b>控制策略</b><span>模糊 PID + 常规 PID</span></div>
         <div class="kitem"><b>模糊控制</b><span>FuzzyControl.m（Et/ECt→ΔF）</span></div>
         <div class="kitem"><b>建模工具</b><span>model_draw.m（gaoyi4）</span></div>
+        <div class="kitem"><b>重构版</b><span>refactored/（PID 死区 ≤ 边界语义保留）</span></div>
       </div>
-      <div class="tags"><span class="tag f">Fuzzy</span><span class="tag p">PID</span></div>
+      <div class="tags"><span class="tag f">Fuzzy</span><span class="tag p">PID</span><span class="tag">已重构</span></div>
     </div>
   </div>
 </section>
@@ -496,7 +504,7 @@
           <tr><td class="mono">FuzzyControl.m</td><td>二维模糊 PID</td><td>Mamdani：输入 Et/ECt，输出 ΔF，7×7 规则表；点火升温等非线性阶段</td></tr>
           <tr><td class="mono">leastmodel.m / model_draw.m</td><td>离线建模/验证</td><td>递推最小二乘辨识 GPC 所需的 A/B 模型参数</td></tr>
           <tr><td class="mono">on_timer.m 内 CLE 块</td><td>趋势前馈补偿</td><td>金塬 428–495 行；GY-750/JL-2 内联于 onTimer_io_4duan.m</td></tr>
-          <tr><td class="mono">refactored/</td><td>宝马工程重构版</td><td>gpc_clac_v2 / pid_calc_v2 / gpc_matrices_v2，参数化 + 修除零，默认输出与现场一致</td></tr>
+          <tr><td class="mono">refactored/</td><td>各工程重构版</td><td>gpc_clac_v2 / pid_calc_v2 / gpc_matrices_v2（江油拉豪另有 gpc_clac1_v2），参数化 + 修除零 + 缓存，默认参数=各现场原值，输出与原版逐位一致</td></tr>
         </tbody>
       </table>
     </div>
